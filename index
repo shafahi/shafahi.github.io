@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live HTML Editor</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: #f4f4f4;
+}
+header {
+background-color: #333;
+color: #fff;
+padding: 1rem;
+text-align: center;
+width: 100%;
+}
+textarea {
+width: 90%;
+height: 200px;
+margin: 1rem 0;
+padding: 1rem;
+font-family: monospace;
+font-size: 1rem;
+}
+iframe {
+width: 90%;
+height: 300px;
+border: 1px solid #ccc;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Live HTML Editor</h1>
+</header>
+<textarea id="htmlEditor">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Homepage</title>
+</head>
+<body>
+<header>
+<h1>Welcome to My Homepage</h1>
+</header>
+<main>
+<h2>About Me</h2>
+<p>This is a brief introduction about myself.</p>
+</main>
+<footer>
+<p>© 2024 My Homepage</p>
+</footer>
+</body>
+</html>
+</textarea>
+<iframe id="preview"></iframe>
+
+<script>
+const editor = document.getElementById('htmlEditor');
+const preview = document.getElementById('preview');
+
+function updatePreview() {
+const content = editor.value;
+preview.srcdoc = content;
+}
+
+editor.addEventListener('input', updatePreview);
+
+// Initial preview update
+updatePreview();
+</script>
+</body>
+</html>
