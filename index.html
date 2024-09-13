@@ -1,87 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Live HTML Editor</title>
-<style>
-body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-display: flex;
-flex-direction: column;
-align-items: center;
-background-color: #f4f4f4;
-}
-header {
-background-color: #333;
-color: #fff;
-padding: 1rem;
-text-align: center;
-width: 100%;
-}
-textarea {
-width: 90%;
-height: 200px;
-margin: 1rem 0;
-padding: 1rem;
-font-family: monospace;
-font-size: 1rem;
-}
-iframe {
-width: 90%;
-height: 300px;
-border: 1px solid #ccc;
-}
-img {
-max-width: 100%;
-height: auto;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .profile-picture {
+            display: block;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 20px auto;
+            object-fit: cover;
+        }
+        .bio {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .bio p {
+            font-size: 18px;
+        }
+        .social-links {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #4CAF50;
+        }
+        .skills, .education, .experience {
+            margin: 20px 0;
+        }
+        h2 {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 4px solid #4CAF50;
+        }
+    </style>
 </head>
 <body>
-<header>
-<h1>Live HTML Editor</h1>
-</header>
-<textarea id="htmlEditor">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Homepage</title>
-</head>
-<body>
-<header>
-<h1>Welcome to My Homepage</h1>
-</header>
-<main>
-<h2>About Me</h2>
-<p>This is a brief introduction about myself.</p>
-<img src="your-image.jpg" alt="My Profile Picture">
-</main>
-<footer>
-<p>© 2024 My Homepage</p>
-</footer>
-</body>
-</html>
-</textarea>
-<iframe id="preview"></iframe>
+    <div class="container">
+        <div class="header">
+            <h1>John Doe</h1>
+            <p>Software Engineer | Web Developer | Tech Enthusiast</p>
+        </div>
 
-<script>
-const editor = document.getElementById('htmlEditor');
-const preview = document.getElementById('preview');
+        <img src="profile.jpg" alt="John Doe" class="profile-picture">
 
-function updatePreview() {
-const content = editor.value;
-preview.srcdoc = content;
-}
+        <div class="bio">
+            <p>Hello! I'm John Doe, a passionate software engineer with expertise in web development, machine learning, and cloud technologies. I love building scalable applications and exploring the latest trends in technology.</p>
+        </div>
 
-editor.addEventListener('input', updatePreview);
+        <div class="social-links">
+            <a href="https://linkedin.com/in/johndoe" target="_blank">LinkedIn</a>
+            <a href="https://github.com/johndoe" target="_blank">GitHub</a>
+            <a href="https://twitter.com/johndoe" target="_blank">Twitter</a>
+        </div>
 
-// Initial preview update
-updatePreview();
-</script>
+        <div class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>React, Angular, Vue.js</li>
+                <li>Node.js, Express</li>
+                <li>Python, Django, Flask</li>
+                <li>AWS, Docker, Kubernetes</li>
+                <li>SQL, NoSQL Databases</li>
+            </ul>
+        </div>
+
+        <div class="education">
+            <h2>Education</h2>
+            <ul>
+                <li>B.Sc. in Computer Science - ABC University (2015-2019)</li>
+                <li>Full Stack Web Development Bootcamp - XYZ Institute (2020)</li>
+            </ul>
+        </div>
+
+        <div class="experience">
+            <h2>Experience</h2>
+            <ul>
+                <li>Software Engineer at TechCorp (2021 - Present)</li>
+                <li>Frontend Developer at Web Solutions (2019 - 2021)</li>
+                <li>Intern at StartupX (2018 - 2019)</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
